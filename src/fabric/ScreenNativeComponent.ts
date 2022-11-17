@@ -8,6 +8,7 @@ import type {
   Double,
 } from 'react-native/Libraries/Types/CodegenTypes';
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 type ScreenEvent = Readonly<{}>;
 
 type ScreenDismissedEvent = Readonly<{
@@ -82,7 +83,7 @@ export interface NativeProps extends ViewProps {
   navigationBarHidden?: boolean;
   nativeBackButtonDismissalEnabled?: boolean;
   onHeaderBackButtonClicked?: BubblingEventHandler<ScreenEvent>;
-};
+}
 
 export default codegenNativeComponent<NativeProps>('RNSScreen', {
   interfaceOnly: true,
