@@ -289,6 +289,12 @@ export interface ScreenProps extends ViewProps {
    * @platform ios
    */
   transitionDuration?: number;
+  /**
+   * Manages the appearance and behavior of a sheet. Works with backgroundColor's alpha < 1.
+   *
+   * @platform ios
+   */
+  sheetPresentation?: SheetPresentationProps;
 }
 
 export interface ScreenContainerProps extends ViewProps {
@@ -570,4 +576,35 @@ export interface SearchBarProps {
    * @default true
    */
   shouldShowHintSearchIcon?: boolean;
+}
+
+export interface SheetPresentationProps {
+  /**
+   * The array of heights where a sheet can rest.
+   */
+  detents: any[];
+  /**
+   * The identifier of the most recently selected detent.
+   */
+  selectedDetentIdentifier: any;
+  /**
+   * A Boolean value that determines whether scrolling expands the sheet to a larger detent.
+   */
+  scrollingExpandsWhenScrolledToEdge: boolean;
+  /**
+   * A Boolean value that determines whether the sheet shows a grabber at the top.
+   */
+  grabberVisible: boolean;
+  /**
+   * A Boolean value that determines whether the sheet attaches to the bottom edge of the screen in a compact-height size class.
+   */
+  edgeAttachedInCompactHeight: boolean;
+  /**
+   * A Boolean value that determines whether the sheet’s width matches its view controller’s preferred content size.
+   */
+  widthFollowsPreferredContentSizeWhenEdgeAttached: boolean;
+  /**
+   * The corner radius that the sheet attempts to present with.
+   */
+  cornerRadius: number;
 }
